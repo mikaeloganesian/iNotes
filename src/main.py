@@ -9,12 +9,11 @@ def load_stylesheet(path: str) -> str:
 def main():
     app = QApplication(sys.argv)
 
-    # Загружаем стили
-    stylesheet = load_stylesheet("resources/style.qss")
-    app.setStyleSheet(stylesheet)
-
     # Запускаем главное окно
     window = MainWindow()
+
+    stylesheet = load_stylesheet("resources/style.qss")
+    app.setStyleSheet(stylesheet)
     window.show()
     sys.exit(app.exec())
 

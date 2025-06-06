@@ -21,18 +21,16 @@ class MainWindow(QMainWindow):
 
         # Главный горизонтальный layout
         main_layout = QHBoxLayout()
+        main_layout.setContentsMargins(0, 0, 0, 0)  # Убираем отступы от краёв
+        main_layout.setSpacing(0)  # Убираем промежутки между виджетами
         main_widget.setLayout(main_layout)
 
         # Левая часть — боковая панель
         self.sidebar = Sidebar()
-        self.sidebar.setStyleSheet("""
-            background-color: #500A1A;
-            color: white;
-        """)
 
         # Правая часть — контент (Markdown редактор)
         self.content = NotesPage()
-
+        self.content.setStyleSheet("background-color: rgba(30, 30, 30, 100);")  # Устанавливаем цвет фона
         
         main_layout.addWidget(self.sidebar)
         main_layout.addWidget(self.content)

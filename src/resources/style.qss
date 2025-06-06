@@ -1,62 +1,25 @@
 QWidget {
-    background-color: #1e1e1e;
     color: #dcdcdc;
     font-family: Arial, "Courier New", monospace;
     font-size: 14px;
 }
 
-QTextEdit, QTextBrowser {
-    background-color: #2d2d2d;
-    border: 1px solid #3c3c3c;
-    padding: 8px;
-    border-radius: 5px;
-}
 
-QTextEdit, QTextBrowser {
-    border: 1px solid #757575;
-}
-
-QScrollBar:vertical, QScrollBar:horizontal {
-    background-color: #888888;
-    width: 10px;
-}
-
-QScrollBar::handle {
-    background: #d8d8d8;
-    border-radius: 5px;
-}
-
-QMainWindow, QWidget#NotionList {
-    background-color: rgba(30, 30, 30, 140); /* полупрозрачный тёмный фон */
-    border-radius: 16px;
+QMainWindow {
+    background-color: rgba(30, 30, 30, 100); /* полупрозрачный тёмный фон */
     padding: 10px;
-}
-
-QTextEdit, QTextBrowser {
-    background-color: rgba(45, 45, 45, 140);
-    border: 1px solid #3c3c3c;
-    border-radius: 12px;
-    padding: 8px;
 }
 
 QPushButton {
     background-color: #2a2a2a;
     color: #dddddd;
     border: none;
-    padding: 12px;
     text-align: left;
     font-size: 14px;
-    border-radius: 4px;
+    margin: 0px;
 }
 
-QPushButton:hover {
-    background-color: #333333;
-}
-
-QPushButton:pressed {
-    background-color: #444444;
-}
-
-QWidget#sidebar {
-    background: transparent;
+* {
+    margin: 0;
+    padding: 0;
 }
