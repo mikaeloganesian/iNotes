@@ -6,7 +6,7 @@ class Sidebar(QWidget):
         super().__init__()
         self.setFixedWidth(200)
         self.setStyleSheet("""
-            background-color: #202020;
+            color: white;
             border-right: 1px solid #2c2c2c;
         """)
 
@@ -22,3 +22,6 @@ class Sidebar(QWidget):
         layout.addWidget(self.kanban_button)
         layout.addWidget(self.settings_button)
         layout.addStretch()
+
+        self.setObjectName("sidebar")
+

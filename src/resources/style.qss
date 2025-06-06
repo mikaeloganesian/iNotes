@@ -1,7 +1,7 @@
 QWidget {
     background-color: #1e1e1e;
     color: #dcdcdc;
-    font-family: Consolas, "Courier New", monospace;
+    font-family: Arial, "Courier New", monospace;
     font-size: 14px;
 }
 
@@ -26,7 +26,7 @@ QScrollBar::handle {
     border-radius: 5px;
 }
 
-QMainWindow {
+QMainWindow, QWidget#NotionList {
     background-color: rgba(30, 30, 30, 140); /* полупрозрачный тёмный фон */
     border-radius: 16px;
     padding: 10px;
@@ -55,4 +55,8 @@ QPushButton:hover {
 
 QPushButton:pressed {
     background-color: #444444;
+}
+
+QWidget#sidebar {
+    background: transparent;
 }

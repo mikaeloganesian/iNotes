@@ -4,12 +4,16 @@ from PyQt6.QtWidgets import (
 )
 from ui.editor import MarkdownEditor
 from ui.sidebar import Sidebar
+from ui.notions_list import NotesPage
+from PyQt6.QtCore import Qt
+
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("iNotes — Интеллектуальные заметки")
+        self.resize(987, 686)
 
         # Главное виджет-окно
         main_widget = QWidget()
@@ -21,10 +25,19 @@ class MainWindow(QMainWindow):
 
         # Левая часть — боковая панель
         self.sidebar = Sidebar()
+        self.sidebar.setStyleSheet("""
+            background-color: #500A1A;
+            color: white;
+        """)
 
         # Правая часть — контент (Markdown редактор)
-        self.content = MarkdownEditor()
+        self.content = NotesPage()
 
         
         main_layout.addWidget(self.sidebar)
         main_layout.addWidget(self.content)
+
+        self.setFixedSize(self.size())
+        self.setWindowFlags(Qt.WindowType.Window | Qt.WindowType.MSWindowsFixedSizeDialogHint)
+        self.setMinimumSize(987, 686)
+        self.setMaximumSize(987, 686)
