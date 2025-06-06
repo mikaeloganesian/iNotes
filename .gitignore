@@ -1,0 +1,43 @@
+# Окружение Python
+iNotes/
+.venv/
+venv/
+env/
+ENV/
+
+# Кеш и компилированные файлы
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Логи
+*.log
+
+# Конфигурации редакторов/IDE
+.vscode/
+.idea/
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Тестовые/отладочные файлы
+.DS_Store
+Thumbs.db
+
+# Файлы среды
+.env
+*.env
+
+# Jupyter/VSCode history (если вдруг появится)
+.ipynb_checkpoints/
+.history/
+
+# Файлы кэширования Qt (временами могут появляться)
+*.qrc~
+*.qmlc
+*.jsc
+
+# Мусор от Markdown Preview/Render
+*.html
