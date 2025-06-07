@@ -30,7 +30,7 @@ class NotesDB:
     def get_all_notes(self) -> List[Tuple[int, str, str, str]]:
         query = "SELECT id, title, date, preview FROM notes ORDER BY date DESC"
         cursor = self.conn.execute(query)
-        return cursor.fetchall()[::-1] # Возвращаем в обратном порядке (от новых к старым)
+        return cursor.fetchall() # Возвращаем в обратном порядке (от новых к старым)
 
     def update_note(self,
                     note_id: int,
@@ -55,6 +55,11 @@ class NotesDB:
         query = f"UPDATE notes SET {', '.join(fields)} WHERE id = ?"
         values.append(str(note_id))
         self.conn.execute(query, tuple(values))
+        self.conn.commit()
+
+    def delete_note_by_id(self, note_id: int) -> None:
+        query = "DELETE FROM notes WHERE id = ?"
+        self.conn.execute(query, (note_id,))
         self.conn.commit()
 
     def close(self) -> None:

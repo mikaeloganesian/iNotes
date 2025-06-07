@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QGraphicsDropShadowEffect
+from PyQt6.QtGui import QColor
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QSizePolicy
@@ -23,27 +24,33 @@ class Sidebar(QWidget):
         bg_layout.setContentsMargins(0, 0, 0, 0)
         self.setStyleSheet("background-color: #64032E;")
 
+        shadow = QGraphicsDropShadowEffect(self)
+        shadow.setBlurRadius(24)
+        shadow.setOffset(10, 0)
+        shadow.setColor(QColor(0, 0, 0, 25))  # Прозрачность
+        self.setGraphicsEffect(shadow)
+        
 
         self.icon = QLabel()
         self.icon.setStyleSheet("margin-bottom: 60px;")
         self.icon.setPixmap(QPixmap("resources/images/image.png"))
         # Кнопки меню
         self.notes_button = QPushButton("My SmartNotes")
-        self.notes_button.setStyleSheet("background-color: #500A1A; color: white; padding: 14px; text-align: center; text-align: left; margin-bottom: 10px; border-right: 2px solid white;")
+        self.notes_button.setStyleSheet("background-color: #500A1A; color: white; padding: 14px; text-align: left; margin-bottom: 10px; border-right: 10px solid white;")
         self.notes_button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.notes_button.setContentsMargins(0, 0, 0, 0)
-        self.kanban_button = QPushButton("Kanban board")
-        self.kanban_button.setStyleSheet("background-color: #500A1A; color: white; padding: 14px; text-align: center; text-align: left;  margin-bottom: 10px; border-right: 2px solid white;")
-        self.kanban_button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        self.kanban_button.setContentsMargins(0, 0, 0, 0)
-        self.settings_button = QPushButton("Settings")
-        self.settings_button.setStyleSheet("background-color: #500A1A; color: white; padding: 14px; text-align: center; text-align: left;  margin-bottom: 10px; border-right: 2px solid white;")
+        # self.kanban_button = QPushButton("Kanban board")
+        # self.kanban_button.setStyleSheet("background-color: #500A1A; color: white; padding: 14px; text-align: left;  margin-bottom: 10px; border-right: 2px solid white;")
+        # self.kanban_button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        # self.kanban_button.setContentsMargins(0, 0, 0, 0)
+        self.settings_button = QPushButton("created by mikaeloganesian")
+        self.settings_button.setStyleSheet("background-color: #500A1A; font-size: 10px; color: white; padding: 14px; text-align: left;  margin-bottom: 10px;")
         self.settings_button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.settings_button.setContentsMargins(0, 0, 0, 0)
 
         bg_layout.addWidget(self.icon, alignment=Qt.AlignmentFlag.AlignCenter)
         bg_layout.addWidget(self.notes_button)
-        bg_layout.addWidget(self.kanban_button)
+        # bg_layout.addWidget(self.kanban_button)
         bg_layout.addWidget(self.settings_button)
         bg_layout.addStretch()
 

@@ -5,6 +5,7 @@ from PyQt6.QtCore import Qt
 from db.db import NotesDB
 from ui.editor import MarkdownEditor
 from ui.note_card import NoteCard
+from datetime import datetime
 
 class NotesPage(QWidget):
     def __init__(self):
@@ -94,9 +95,12 @@ class NotesPage(QWidget):
         return rows * card_height + (rows - 1) * vertical_spacing + margins
 
 
+
     def create_new_note(self):
-        self.db.add_note("Title", "Tap to the note to change it.", "2025-06-01")
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+        self.db.add_note("Title", "Tap to the note to change it.", current_time)
         self.load_notes()
+
 
     def resizeEvent(self, event):
         super().resizeEvent(event)

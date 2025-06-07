@@ -30,10 +30,13 @@ class MainWindow(QMainWindow):
 
         # Правая часть — контент (Markdown редактор)
         self.content = NotesPage()
-        self.content.setStyleSheet("background-color: #DADADA;")  # Устанавливаем цвет фона
+        self.content.setStyleSheet("background-color: #F8F8F8;")  # Устанавливаем цвет фона
         
         main_layout.addWidget(self.sidebar)
         main_layout.addWidget(self.content)
+
+        self.sidebar.raise_()
+
 
         self.setFixedSize(self.size())
         self.setWindowFlags(Qt.WindowType.Window | Qt.WindowType.MSWindowsFixedSizeDialogHint)
