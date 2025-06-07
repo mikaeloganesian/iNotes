@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
 
         # Правая часть — контент (Markdown редактор)
         self.content = NotesPage()
-        self.content.setStyleSheet("background-color: rgba(30, 30, 30, 100);")  # Устанавливаем цвет фона
+        self.content.setStyleSheet("background-color: #DADADA;")  # Устанавливаем цвет фона
         
         main_layout.addWidget(self.sidebar)
         main_layout.addWidget(self.content)

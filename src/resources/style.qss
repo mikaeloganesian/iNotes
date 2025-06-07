@@ -1,12 +1,11 @@
 QWidget {
     color: #dcdcdc;
-    font-family: Arial, "Courier New", monospace;
-    font-size: 14px;
+    font-family: "Segoe UI";
 }
 
 
 QMainWindow {
-    background-color: rgba(30, 30, 30, 100); /* полупрозрачный тёмный фон */
+    background-color: #F8F8F8;
     padding: 10px;
 }
 
